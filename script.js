@@ -18,15 +18,15 @@ function preload(){
 
 function setup(){
   createCanvas(400,400)
-  colorMode(HSB,)
+  
   frameRate(1)
 }
 
 function draw(){
   background(0);
   textSize(12)
-  stroke(255)
-  fill(255)
+  //stroke(255)
+  //fill(255)
   // year
   let yr = years[t]
   text(yr,10,12)
@@ -37,12 +37,13 @@ function draw(){
   let sh = sTemps[t]
   
 
-  let sClr = map(sh,Math.min(...sTemps), Math.max(...sTemps),0,255)
-  print(sh,sClr, Math.min(...sTemps), Math.max(...sTemps))
+  //let sClr = map(sh,Math.min(...sTemps), Math.max(...sTemps),0,255)
+  //print(sh,sClr, Math.min(...sTemps), Math.max(...sTemps))
   
   fill(255,0,0)
+  ellipse(0,width/4,width/2,width/2)
   arc(0,0,width,height,0,PI)
-  fill(255,0,0)
+
   // northern hemisphere
   let nh =nTemps[t]
   let nClr = map(nh,Math.min(...nTemps), Math.max(...nTemps),0,255)
@@ -52,8 +53,7 @@ function draw(){
   // increment t
   t =t +1;
   t = t% years.length
-
-  noLoop()
+  
 }
 
 
